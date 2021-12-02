@@ -71,6 +71,8 @@
 		864FB216275858A400AABD66 /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
 		864FB21A275865F000AABD66 /* SchoolsApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsApiTests.swift; sourceTree = "<group>"; };
 		864FB21C2758840000AABD66 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		864FB21F2758D7CF00AABD66 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		864FB2212758D89900AABD66 /* details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,8 @@
 				864FB19E275787A000AABD66 /* schoolsTests */,
 				864FB1A9275787A000AABD66 /* schoolsUITests */,
 				864FB1862757879D00AABD66 /* Products */,
+				864FB2202758D80A00AABD66 /* screenshots */,
+				864FB21F2758D7CF00AABD66 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +203,14 @@
 				864FB21427580A0300AABD66 /* SchoolsViewModel.swift */,
 			);
 			path = viewModels;
+			sourceTree = "<group>";
+		};
+		864FB2202758D80A00AABD66 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				864FB2212758D89900AABD66 /* details.png */,
+			);
+			path = screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
