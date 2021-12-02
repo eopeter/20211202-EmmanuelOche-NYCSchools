@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct schoolsApp: App {
     let persistenceController = PersistenceController.shared
-
+    let schoolsApi = SchoolsApi()
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView(
+                viewModel: .init(schoolsApiService: schoolsApi)
+            )
+            .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
