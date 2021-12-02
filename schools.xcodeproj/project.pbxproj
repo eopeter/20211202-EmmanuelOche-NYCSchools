@@ -26,6 +26,7 @@
 		864FB217275858A400AABD66 /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB216275858A400AABD66 /* MockUrlProtocol.swift */; };
 		864FB21B275865F000AABD66 /* SchoolsApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB21A275865F000AABD66 /* SchoolsApiTests.swift */; };
 		864FB21D2758840000AABD66 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB21C2758840000AABD66 /* Helpers.swift */; };
+		864FB2232758FF7100AABD66 /* SatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB2222758FF7100AABD66 /* SatData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		864FB21C2758840000AABD66 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		864FB21F2758D7CF00AABD66 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		864FB2212758D89900AABD66 /* details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details.png; sourceTree = "<group>"; };
+		864FB2222758FF7100AABD66 /* SatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatData.swift; sourceTree = "<group>"; };
+		864FB2242759061F00AABD66 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				864FB1F72757B23500AABD66 /* School.swift */,
+				864FB2222758FF7100AABD66 /* SatData.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -208,6 +212,7 @@
 		864FB2202758D80A00AABD66 /* screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				864FB2242759061F00AABD66 /* list.png */,
 				864FB2212758D89900AABD66 /* details.png */,
 			);
 			path = screenshots;
@@ -348,6 +353,7 @@
 				864FB18B2757879D00AABD66 /* SchoolsView.swift in Sources */,
 				864FB1892757879D00AABD66 /* schoolsApp.swift in Sources */,
 				864FB209275801CC00AABD66 /* SchoolApiService.swift in Sources */,
+				864FB2232758FF7100AABD66 /* SatData.swift in Sources */,
 				864FB2012757D2FC00AABD66 /* SchoolSatView.swift in Sources */,
 				864FB2122758083000AABD66 /* Activity.swift in Sources */,
 				864FB2052757DE2100AABD66 /* SearchBar.swift in Sources */,

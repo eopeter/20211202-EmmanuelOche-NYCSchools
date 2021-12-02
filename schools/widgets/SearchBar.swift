@@ -17,7 +17,7 @@ struct SearchBar : View {
             HStack {
                 Image(systemName: "magnifyingglass")
                 
-                TextField("search", text: self.$searchTerm, onEditingChanged: { isEditing in
+                TextField("search by school name", text: self.$searchTerm, onEditingChanged: { isEditing in
                     self.showCancelButton = true
                 }, onCommit: {
                 }).foregroundColor(.primary)

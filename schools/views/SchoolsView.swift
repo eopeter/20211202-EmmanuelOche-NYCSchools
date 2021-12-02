@@ -18,12 +18,18 @@ struct ContentView: View {
                 VStack{
                     if !viewModel.hasError {
                         List{
+                            //given more time, I would implement the searching the list
                             Section(header: ListHeader()) {
                                 ForEach(viewModel.schools) { school in
                                     NavigationLink(
                                         destination: SchoolSatScoreView(satData: viewModel.satLookUp[school.dbn], schoolName: school.school_name),
                                         label: {
                                             Text(school.school_name)
+                                                //since the full school name is available on the next page, may be ok to
+                                                //limit the lines to 1 and truncate excess char for aesthetics
+                                                //but leave to PO to decide
+                                                .lineLimit(1)
+                                                .truncationMode(Text.TruncationMode.tail)
                                         })
                                 }
                             }
