@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
     
@@ -17,26 +16,7 @@ struct ContentView: View {
             NavigationView{
                 VStack{
                     if !viewModel.hasError {
-                        List{
-                            //given more time, I would implement the searching the list
-                            Section(header: ListHeader()) {
-                                ForEach(viewModel.schools) { school in
-                                    NavigationLink(
-                                        destination: SchoolSatScoreView(satData: viewModel.satLookUp[school.dbn], schoolName: school.school_name),
-                                        label: {
-                                            Text(school.school_name)
-                                                //since the full school name is available on the next page, may be ok to
-                                                //limit the lines to 1 and truncate excess char for aesthetics
-                                                //but leave to PO to decide
-                                                .lineLimit(1)
-                                                .truncationMode(Text.TruncationMode.tail)
-                                        })
-                                }
-                            }
-                        }.listStyle(GroupedListStyle())
-                        .onAppear(){
-                            viewModel.loadData()
-                        }
+                        SchoolListView(viewModel: viewModel)
                     }else{
                         Text("An error occured \nwhile loading the data")
                             .multilineTextAlignment(.center)
@@ -65,6 +45,36 @@ struct ContentView: View {
         
     }
     
+    //construct the ListView to show the schools
+    struct SchoolListView: View {
+        
+        @StateObject var viewModel: SchoolsViewModel
+        
+        var body: some View {
+            List{
+                //given more time, I would implement the searching the list
+                Section(header: ListHeader()) {
+                    ForEach(viewModel.schools) { school in
+                        NavigationLink(
+                            destination: SchoolSatScoreView(satData: viewModel.satLookUp[school.dbn], schoolName: school.school_name),
+                            label: {
+                                Text(school.school_name)
+                                    //since the full school name is available on the next page, may be ok to
+                                    //limit the lines to 1 and truncate excess char for aesthetics
+                                    //but leave to PO to decide
+                                    .lineLimit(1)
+                                    .truncationMode(Text.TruncationMode.tail)
+                            })
+                    }
+                }
+            }.listStyle(GroupedListStyle())
+            .onAppear(){
+                viewModel.loadData()
+            }
+        }
+    }
+    
+    //ListView header to hold a searchbar
     struct ListHeader: View {
         @State var searchTerm = ""
         var body: some View {

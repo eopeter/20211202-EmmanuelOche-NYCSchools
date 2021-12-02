@@ -128,19 +128,16 @@
 		864FB1872757879D00AABD66 /* schools */ = {
 			isa = PBXGroup;
 			children = (
+				864FB2272759097600AABD66 /* utilities */,
+				864FB2262759095300AABD66 /* services */,
 				864FB213275809EB00AABD66 /* viewModels */,
 				864FB20F2758075A00AABD66 /* models */,
 				864FB20E2758069D00AABD66 /* views */,
 				864FB2032757DE0400AABD66 /* widgets */,
 				864FB1882757879D00AABD66 /* schoolsApp.swift */,
 				864FB18C2757879F00AABD66 /* Assets.xcassets */,
-				864FB1912757879F00AABD66 /* Persistence.swift */,
-				864FB1F92757B45800AABD66 /* Logger.swift */,
 				864FB1962757879F00AABD66 /* Info.plist */,
-				864FB1932757879F00AABD66 /* schools.xcdatamodeld */,
 				864FB18E2757879F00AABD66 /* Preview Content */,
-				864FB1FB2757B8A200AABD66 /* Constants.swift */,
-				864FB208275801CC00AABD66 /* SchoolApiService.swift */,
 			);
 			path = schools;
 			sourceTree = "<group>";
@@ -216,6 +213,25 @@
 				864FB2212758D89900AABD66 /* details.png */,
 			);
 			path = screenshots;
+			sourceTree = "<group>";
+		};
+		864FB2262759095300AABD66 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				864FB208275801CC00AABD66 /* SchoolApiService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		864FB2272759097600AABD66 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				864FB1932757879F00AABD66 /* schools.xcdatamodeld */,
+				864FB1912757879F00AABD66 /* Persistence.swift */,
+				864FB1F92757B45800AABD66 /* Logger.swift */,
+				864FB1FB2757B8A200AABD66 /* Constants.swift */,
+			);
+			path = utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
