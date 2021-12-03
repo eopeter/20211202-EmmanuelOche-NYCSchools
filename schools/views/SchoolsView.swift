@@ -53,10 +53,9 @@ struct ContentView: View {
         
         var body: some View {
             VStack{
-                //given more time, I would implement the searching the list
                 SearchBar(searchTerm: $searchTerm)
                 List{
-                    ForEach(viewModel.schools) { school in
+                    ForEach(viewModel.schools.filter({ searchTerm.isEmpty ? true : $0.school_name.contains(searchTerm)})) { school in
                         NavigationLink(
                             destination: SchoolSatScoreView(satData: viewModel.satLookUp[school.dbn], schoolName: school.school_name),
                             label: {
