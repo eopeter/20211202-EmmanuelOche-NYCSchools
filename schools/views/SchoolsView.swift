@@ -66,7 +66,7 @@ struct ContentView: View {
                         })
                 }
             }
-            .searchable(text: $searchTerm)
+            .searchable(text: $searchTerm, prompt: "search by school name")
             .listStyle(InsetListStyle())
             .onAppear(){
                 viewModel.loadData()
