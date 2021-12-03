@@ -43,12 +43,15 @@ func setUpApiSatDataRequestHandler() {
                          {
                             "dbn":"\(dbn)",
                             "school_name":"\(school_name)",
-                            "num_of_sat_test_takers":"\(testTakers)"
+                            "num_of_sat_test_takers":"\(testTakers)",
+                            "sat_critical_reading_avg_score":"",
+                            "sat_math_avg_score":"",
+                            "sat_writing_avg_score":"",
                          },
                      ]
                      """
     let data = jsonString.data(using: .utf8)
-    
+    //setup request handler
     MockUrlProtocol.requestHandler = { request in
         guard let url = request.url, url == apiSatEndpoint else {
             throw ApiResponseError.request

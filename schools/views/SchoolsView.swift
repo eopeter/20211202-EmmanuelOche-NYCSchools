@@ -12,8 +12,8 @@ struct ContentView: View {
     @StateObject var viewModel: SchoolsViewModel
     
     var body: some View {
-        ZStack {
-            NavigationView{
+        NavigationView{
+            ZStack {
                 VStack{
                     if !viewModel.hasError {
                         SchoolListView(viewModel: viewModel)
@@ -30,6 +30,7 @@ struct ContentView: View {
                         Label("Reload", systemImage: "arrow.clockwise")
                     }
                 }
+                //bottom bar
                 .toolbar {
                     ToolbarItemGroup(placement: .bottomBar) {
                         Spacer()
@@ -38,10 +39,11 @@ struct ContentView: View {
                         Spacer()
                     }
                 }
+                //loading indicator
+                ActivityIndicator(isAnimating: !viewModel.doneLoading)
             }
-            //loading indicator
-            ActivityIndicator(isAnimating: !viewModel.doneLoading)
         }
+        
         
     }
     

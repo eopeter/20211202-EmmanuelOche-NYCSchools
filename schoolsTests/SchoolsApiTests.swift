@@ -24,6 +24,7 @@ class SchoolsApiTests: XCTestCase {
     
     //success load schools test case
     func test_ApiGetSchools_Success() throws {
+        //setup mock http handler
         setUpApiSchoolRequestHandler()
         schoolsApi.loadSchoolData { (result) in
             switch result {
@@ -42,6 +43,7 @@ class SchoolsApiTests: XCTestCase {
     
     //failure load schools test case
     func test_ApiGetSchools_Failure() throws {
+        //setup mock http handler
         setUpBadApiSchoolRequestHandler()
         schoolsApi.loadSchoolData { (result) in
             switch result {
@@ -63,9 +65,8 @@ class SchoolsApiTests: XCTestCase {
     
     //success load sat scores test case
     func test_ApiGetSATScores_Success() throws {
-        
+        //setup mock http handler
         setUpApiSatDataRequestHandler()
-        
         schoolsApi.loadSatData { (result) in
             switch result {
             case .success(let satData):

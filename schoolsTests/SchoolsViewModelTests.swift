@@ -37,6 +37,18 @@ class schoolsViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
     
+    func test_LoadApiSchoolData_Failure(){
+        //set up the mock api request handler for getting schools
+        setUpBadApiSchoolRequestHandler()
+        //load the schools from api
+        schoolsViewModel.loadSchoolData {
+            XCTAssertTrue(self.schoolsViewModel.hasError)
+            XCTAssertEqual(self.schoolsViewModel.schools.count, 0)
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
     func test_LoadApiSatData_Success(){
         //set up the mock api request handler for getting sat scores
         setUpApiSatDataRequestHandler()
@@ -48,16 +60,15 @@ class schoolsViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 5.0)
     }
     
-    func test_LoadApiData_Failed(){
-        schoolsViewModel.loadData()
-    }
-    
-    func test_ReloadApiData_Success(){
-        schoolsViewModel.reload()
-    }
-    
-    func test_ReloadApiData_Failed(){
-        schoolsViewModel.reload()
+    func test_LoadApiSatData_Failure(){
+        //set up the mock api request handler for getting sat scores
+        setUpBadApiSatRequestHandler()
+        //load the sat scores from api
+        schoolsViewModel.loadSatData {
+            XCTAssertEqual(self.schoolsViewModel.satLookUp.count, 0)
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
     }
 
 }
