@@ -34,7 +34,7 @@ class SchoolsApi: ISchoolsApi, ObservableObject {
             // process the response on the main thread
             DispatchQueue.main.async {
                 do{
-                    // Check if any error occured.
+                    // Check if any error occurred.
                     if let error = error {
                         throw error
                     }
@@ -77,7 +77,7 @@ class SchoolsApi: ISchoolsApi, ObservableObject {
             // process the response on the main thread
             DispatchQueue.main.async {
                 do{
-                    // Check if any error occured.
+                    // Check if any error occurred.
                     if let error = error {
                         throw error
                     }
@@ -90,10 +90,12 @@ class SchoolsApi: ISchoolsApi, ObservableObject {
                     
                     // Check data is not null
                     if let data = data {
-                        if let satData = try? JSONDecoder().decode([SatData].self, from: data) {
+                        do {
+                            let satData = try JSONDecoder().decode([SatData].self, from: data)
                             Logger.info(message: "retrieved \(satData.count) sat data from api")
                             completion(.success(satData))
-                        }else{
+                        }catch let jsonError as NSError {
+                            Logger.error(msg: jsonError.localizedDescription, error: jsonError)
                             completion(.failure(ApiResponseError.parsing))
                         }
                     }else{

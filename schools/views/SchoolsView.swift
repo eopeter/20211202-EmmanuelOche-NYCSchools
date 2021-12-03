@@ -17,14 +17,14 @@ struct ContentView: View {
                 VStack{
                     if !viewModel.hasError {
                         SchoolListView(viewModel: viewModel)
-                    }else{
+                    }
+                    else{
                         Text("An error occured \nwhile loading the data")
                             .multilineTextAlignment(.center)
                             .font(.system(size: 22))
                     }
                 }
                 .navigationTitle(MAIN_TITLE)
-                .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     Button(action: viewModel.reload) {
                         Label("Reload", systemImage: "arrow.clockwise")
@@ -40,7 +40,7 @@ struct ContentView: View {
                 }
             }
             //loading indicator
-            ActivityIndicator(isAnimating: viewModel.loading)
+            ActivityIndicator(isAnimating: !viewModel.doneLoading)
         }
         
     }
@@ -49,36 +49,32 @@ struct ContentView: View {
     struct SchoolListView: View {
         
         @StateObject var viewModel: SchoolsViewModel
+        @State var searchTerm = ""
         
         var body: some View {
-            List{
+            VStack{
                 //given more time, I would implement the searching the list
-                Section(header: ListHeader()) {
+                SearchBar(searchTerm: $searchTerm)
+                List{
                     ForEach(viewModel.schools) { school in
                         NavigationLink(
                             destination: SchoolSatScoreView(satData: viewModel.satLookUp[school.dbn], schoolName: school.school_name),
                             label: {
                                 Text(school.school_name)
-                                    //since the full school name is available on the next page, may be ok to
-                                    //limit the lines to 1 and truncate excess char for aesthetics
-                                    //but leave to PO to decide
+                                //since the full school name is available on the next page, may be ok to
+                                //limit the lines to 1 and truncate excess char for aesthetics
+                                //but leave to PO to decide
                                     .lineLimit(1)
                                     .truncationMode(Text.TruncationMode.tail)
                             })
                     }
                 }
-            }.listStyle(GroupedListStyle())
-            .onAppear(){
-                viewModel.loadData()
+                .listStyle(InsetListStyle())
+                .onAppear(){
+                    viewModel.loadData()
+                }
             }
-        }
-    }
-    
-    //ListView header to hold a searchbar
-    struct ListHeader: View {
-        @State var searchTerm = ""
-        var body: some View {
-            SearchBar(searchTerm: $searchTerm)
+            
         }
     }
     

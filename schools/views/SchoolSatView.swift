@@ -66,5 +66,6 @@ struct SchoolSatScoreView : View {
             
         }
         .navigationTitle("SAT Details")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -73,9 +73,9 @@
 		864FB21A275865F000AABD66 /* SchoolsApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsApiTests.swift; sourceTree = "<group>"; };
 		864FB21C2758840000AABD66 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		864FB21F2758D7CF00AABD66 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		864FB2212758D89900AABD66 /* details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details.png; sourceTree = "<group>"; };
 		864FB2222758FF7100AABD66 /* SatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatData.swift; sourceTree = "<group>"; };
-		864FB2242759061F00AABD66 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		867995DC275A26B0000E4E29 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		867995DD275A3391000E4E29 /* details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,8 +209,8 @@
 		864FB2202758D80A00AABD66 /* screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				864FB2242759061F00AABD66 /* list.png */,
-				864FB2212758D89900AABD66 /* details.png */,
+				867995DD275A3391000E4E29 /* details.png */,
+				867995DC275A26B0000E4E29 /* list.png */,
 			);
 			path = screenshots;
 			sourceTree = "<group>";

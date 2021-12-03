@@ -14,7 +14,7 @@ let apiSatEndpoint = URL(string: SAT_API_ENDPOINT)!
 let dbn = "02M260"
 let school_name = "Clinton School Writers & Artists, M.S. 260"
 let testTakers = "30"
-let data = Data()
+let badData = Data()
 
 func setUpApiSchoolRequestHandler() {
     let jsonString = """
@@ -66,7 +66,7 @@ func setUpBadApiSchoolRequestHandler() {
         }
         
         let response = HTTPURLResponse(url: apiSchoolsEndpoint, statusCode: 200, httpVersion: nil, headerFields: nil)!
-        return (response, data)
+        return (response, badData)
     }
 }
 
@@ -77,6 +77,6 @@ func setUpBadApiSatRequestHandler() {
         }
         
         let response = HTTPURLResponse(url: apiSatEndpoint, statusCode: 200, httpVersion: nil, headerFields: nil)!
-        return (response, data)
+        return (response, badData)
     }
 }
