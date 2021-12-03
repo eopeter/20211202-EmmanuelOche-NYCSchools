@@ -19,9 +19,7 @@
 		864FB1FA2757B45800AABD66 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB1F92757B45800AABD66 /* Logger.swift */; };
 		864FB1FC2757B8A200AABD66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB1FB2757B8A200AABD66 /* Constants.swift */; };
 		864FB2012757D2FC00AABD66 /* SchoolSatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB2002757D2FC00AABD66 /* SchoolSatView.swift */; };
-		864FB2052757DE2100AABD66 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB2042757DE2100AABD66 /* SearchBar.swift */; };
 		864FB209275801CC00AABD66 /* SchoolApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB208275801CC00AABD66 /* SchoolApiService.swift */; };
-		864FB2122758083000AABD66 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB2112758083000AABD66 /* Activity.swift */; };
 		864FB21527580A0300AABD66 /* SchoolsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB21427580A0300AABD66 /* SchoolsViewModel.swift */; };
 		864FB217275858A400AABD66 /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB216275858A400AABD66 /* MockUrlProtocol.swift */; };
 		864FB21B275865F000AABD66 /* SchoolsApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB21A275865F000AABD66 /* SchoolsApiTests.swift */; };
@@ -65,9 +63,7 @@
 		864FB1F92757B45800AABD66 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		864FB1FB2757B8A200AABD66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		864FB2002757D2FC00AABD66 /* SchoolSatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSatView.swift; sourceTree = "<group>"; };
-		864FB2042757DE2100AABD66 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		864FB208275801CC00AABD66 /* SchoolApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolApiService.swift; sourceTree = "<group>"; };
-		864FB2112758083000AABD66 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		864FB21427580A0300AABD66 /* SchoolsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewModel.swift; sourceTree = "<group>"; };
 		864FB216275858A400AABD66 /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
 		864FB21A275865F000AABD66 /* SchoolsApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsApiTests.swift; sourceTree = "<group>"; };
@@ -133,7 +129,6 @@
 				864FB213275809EB00AABD66 /* viewModels */,
 				864FB20F2758075A00AABD66 /* models */,
 				864FB20E2758069D00AABD66 /* views */,
-				864FB2032757DE0400AABD66 /* widgets */,
 				864FB1882757879D00AABD66 /* schoolsApp.swift */,
 				864FB18C2757879F00AABD66 /* Assets.xcassets */,
 				864FB1962757879F00AABD66 /* Info.plist */,
@@ -169,15 +164,6 @@
 				864FB1AC275787A000AABD66 /* Info.plist */,
 			);
 			path = schoolsUITests;
-			sourceTree = "<group>";
-		};
-		864FB2032757DE0400AABD66 /* widgets */ = {
-			isa = PBXGroup;
-			children = (
-				864FB2042757DE2100AABD66 /* SearchBar.swift */,
-				864FB2112758083000AABD66 /* Activity.swift */,
-			);
-			path = widgets;
 			sourceTree = "<group>";
 		};
 		864FB20E2758069D00AABD66 /* views */ = {
@@ -371,8 +357,6 @@
 				864FB209275801CC00AABD66 /* SchoolApiService.swift in Sources */,
 				864FB2232758FF7100AABD66 /* SatData.swift in Sources */,
 				864FB2012757D2FC00AABD66 /* SchoolSatView.swift in Sources */,
-				864FB2122758083000AABD66 /* Activity.swift in Sources */,
-				864FB2052757DE2100AABD66 /* SearchBar.swift in Sources */,
 				864FB1FC2757B8A200AABD66 /* Constants.swift in Sources */,
 				864FB1F82757B23500AABD66 /* School.swift in Sources */,
 				864FB1952757879F00AABD66 /* schools.xcdatamodeld in Sources */,
@@ -465,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -520,7 +504,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -540,7 +524,7 @@
 				DEVELOPMENT_TEAM = U5K74N99H5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = schools/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -562,7 +546,7 @@
 				DEVELOPMENT_TEAM = U5K74N99H5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = schools/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

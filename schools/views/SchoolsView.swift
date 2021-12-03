@@ -52,28 +52,25 @@ struct ContentView: View {
         @State var searchTerm = ""
         
         var body: some View {
-            VStack{
-                SearchBar(searchTerm: $searchTerm)
-                List{
-                    ForEach(viewModel.schools.filter({ searchTerm.isEmpty ? true : $0.school_name.contains(searchTerm)})) { school in
-                        NavigationLink(
-                            destination: SchoolSatScoreView(satData: viewModel.satLookUp[school.dbn], schoolName: school.school_name),
-                            label: {
-                                Text(school.school_name)
-                                //since the full school name is available on the next page, may be ok to
-                                //limit the lines to 1 and truncate excess char for aesthetics
-                                //but leave to PO to decide
-                                    .lineLimit(1)
-                                    .truncationMode(Text.TruncationMode.tail)
-                            })
-                    }
-                }
-                .listStyle(InsetListStyle())
-                .onAppear(){
-                    viewModel.loadData()
+            List{
+                ForEach(viewModel.schools.filter({ searchTerm.isEmpty ? true : $0.school_name.contains(searchTerm)})) { school in
+                    NavigationLink(
+                        destination: SchoolSatScoreView(satData: viewModel.satLookUp[school.dbn], schoolName: school.school_name),
+                        label: {
+                            Text(school.school_name)
+                            //since the full school name is available on the next page, may be ok to
+                            //limit the lines to 1 and truncate excess char for aesthetics
+                            //but leave to PO to decide
+                                .lineLimit(1)
+                                .truncationMode(Text.TruncationMode.tail)
+                        })
                 }
             }
-            
+            .searchable(text: $searchTerm)
+            .listStyle(InsetListStyle())
+            .onAppear(){
+                viewModel.loadData()
+            }
         }
     }
     
