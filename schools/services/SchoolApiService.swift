@@ -44,17 +44,24 @@ class SchoolsApi: ISchoolsApi, ObservableObject {
                         completion(.failure(ApiResponseError.network))
                         return
                     }
+                    
+                    // Check data is not null
+                    if let data = data {
+                        if var schools = try? JSONDecoder().decode([School].self, from: data) {
+                            Logger.info(message: "retrieved \(schools.count) colleges from api")
+                            schools.sort{
+                                $0.school_name < $1.school_name
+                            }
+                            completion(.success(schools))
+                        }else{
+                            completion(.failure(ApiResponseError.parsing))
+                        }
+                    }else{
+                        completion(.failure(ApiResponseError.nodata))
+                    }
+                    
                 }catch {
                     completion(.failure(error))
-                }
-                if var schools = try? JSONDecoder().decode([School].self, from: data!) {
-                    Logger.info(message: "retrieved \(schools.count) colleges from api")
-                    schools.sort{
-                        $0.school_name < $1.school_name
-                    }
-                    completion(.success(schools))
-                }else{
-                    completion(.failure(ApiResponseError.parsing))
                 }
             }
             
@@ -80,15 +87,22 @@ class SchoolsApi: ISchoolsApi, ObservableObject {
                         completion(.failure(ApiResponseError.network))
                         return
                     }
+                    
+                    // Check data is not null
+                    if let data = data {
+                        if let satData = try? JSONDecoder().decode([SatData].self, from: data) {
+                            Logger.info(message: "retrieved \(satData.count) sat data from api")
+                            completion(.success(satData))
+                        }else{
+                            completion(.failure(ApiResponseError.parsing))
+                        }
+                    }else{
+                        completion(.failure(ApiResponseError.nodata))
+                    }
                 }catch {
                     completion(.failure(error))
                 }
-                if let satData = try? JSONDecoder().decode([SatData].self, from: data!) {
-                    Logger.info(message: "retrieved \(satData.count) sat data from api")
-                    completion(.success(satData))
-                }else{
-                    completion(.failure(ApiResponseError.parsing))
-                }
+                
             }
         }.resume()
     }
@@ -99,4 +113,5 @@ enum ApiResponseError : Error {
     case parsing
     case badUrl
     case request
+    case nodata
 }
