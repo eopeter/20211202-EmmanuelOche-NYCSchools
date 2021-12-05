@@ -11,10 +11,11 @@
 #import "schools-Swift.h"
 
 @interface SchoolsSatDetailsViewController()
-@property NSString *schoolName;
+@property (nonatomic, strong, nonnull) NSString *schoolName;
 @property SatData *satData;
 @end
 
+NS_ASSUME_NONNULL_BEGIN
 @implementation SchoolsSatDetailsViewController
 
 
@@ -78,4 +79,10 @@
     
     return cell;
 }
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+}
 @end
+NS_ASSUME_NONNULL_END
