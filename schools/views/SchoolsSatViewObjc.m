@@ -18,9 +18,9 @@
 @implementation SchoolsSatDetailsViewController
 
 
-- (id) initWithParams: (SatData *) param : (NSString *) schoolName {
+- (id) initWithSatDataAndSchoolName: (SatData *) satData : (NSString *) schoolName {
     if(self = [super init]){
-        self.satData = param;
+        self.satData = satData;
         self.schoolName = schoolName;
     }
     return self;

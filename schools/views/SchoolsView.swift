@@ -96,7 +96,7 @@ struct SatView: UIViewControllerRepresentable {
     var schoolName: String
     
     func makeUIViewController(context: Context) -> SchoolsSatDetailsViewController {
-        let viewController = SchoolsSatDetailsViewController.init(params: satData, schoolName)!
+        let viewController = SchoolsSatDetailsViewController.init(satDataAndSchoolName: satData, schoolName)!
         return viewController
     }
     

@@ -17,7 +17,7 @@
     IBOutlet UIImageView *chartImageView;
 }
 
-- (id) initWithParams: (SatData *) param : (NSString *) schoolName;
+- (id) initWithSatDataAndSchoolName: (SatData *) satData : (NSString *) schoolName;
 
 @end
 
