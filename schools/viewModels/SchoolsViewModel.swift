@@ -86,7 +86,7 @@ final class SchoolsViewModel: ObservableObject {
                 //could save the result in CoreData
                 //using a dictionary to allow quick lookup of SAT data by school dbn/id
                 self.satLookUp = satData.reduce(into: [String: SatData]()){
-                    $0[$1.dbn] = $1
+                    $0[$1.dbn!] = $1
                 }
             case .failure(let error):
                 //need to let user know there was an error

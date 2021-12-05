@@ -25,6 +25,8 @@
 		864FB21B275865F000AABD66 /* SchoolsApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB21A275865F000AABD66 /* SchoolsApiTests.swift */; };
 		864FB21D2758840000AABD66 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB21C2758840000AABD66 /* Helpers.swift */; };
 		864FB2232758FF7100AABD66 /* SatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864FB2222758FF7100AABD66 /* SatData.swift */; };
+		867995E0275C3AFA000E4E29 /* SchoolsSatViewObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 867995DF275C3AFA000E4E29 /* SchoolsSatViewObjc.m */; };
+		867995E3275C3ECB000E4E29 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867995E2275C3ECB000E4E29 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,10 @@
 		864FB2222758FF7100AABD66 /* SatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatData.swift; sourceTree = "<group>"; };
 		867995DC275A26B0000E4E29 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		867995DD275A3391000E4E29 /* details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details.png; sourceTree = "<group>"; };
+		867995DE275C3AFA000E4E29 /* schools-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "schools-Bridging-Header.h"; sourceTree = "<group>"; };
+		867995DF275C3AFA000E4E29 /* SchoolsSatViewObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SchoolsSatViewObjc.m; sourceTree = "<group>"; };
+		867995E1275C3D00000E4E29 /* SchoolsSatViewObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SchoolsSatViewObjc.h; sourceTree = "<group>"; };
+		867995E2275C3ECB000E4E29 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,10 @@
 			children = (
 				864FB18A2757879D00AABD66 /* SchoolsView.swift */,
 				864FB2002757D2FC00AABD66 /* SchoolSatView.swift */,
+				867995E1275C3D00000E4E29 /* SchoolsSatViewObjc.h */,
+				867995DF275C3AFA000E4E29 /* SchoolsSatViewObjc.m */,
+				867995DE275C3AFA000E4E29 /* schools-Bridging-Header.h */,
+				867995E2275C3ECB000E4E29 /* Storyboard.storyboard */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -287,6 +297,7 @@
 				TargetAttributes = {
 					864FB1842757879D00AABD66 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1310;
 					};
 					864FB19A275787A000AABD66 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -325,6 +336,7 @@
 			files = (
 				864FB1902757879F00AABD66 /* Preview Assets.xcassets in Resources */,
 				864FB18D2757879F00AABD66 /* Assets.xcassets in Resources */,
+				867995E3275C3ECB000E4E29 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +364,7 @@
 				864FB21527580A0300AABD66 /* SchoolsViewModel.swift in Sources */,
 				864FB1922757879F00AABD66 /* Persistence.swift in Sources */,
 				864FB1FA2757B45800AABD66 /* Logger.swift in Sources */,
+				867995E0275C3AFA000E4E29 /* SchoolsSatViewObjc.m in Sources */,
 				864FB18B2757879D00AABD66 /* SchoolsView.swift in Sources */,
 				864FB1892757879D00AABD66 /* schoolsApp.swift in Sources */,
 				864FB209275801CC00AABD66 /* SchoolApiService.swift in Sources */,
@@ -433,6 +446,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -494,6 +508,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -519,7 +534,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"schools/Preview Content\"";
 				DEVELOPMENT_TEAM = U5K74N99H5;
 				ENABLE_PREVIEWS = YES;
@@ -531,6 +548,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nyc.schools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "schools/views/schools-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -541,7 +560,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"schools/Preview Content\"";
 				DEVELOPMENT_TEAM = U5K74N99H5;
 				ENABLE_PREVIEWS = YES;
@@ -553,6 +574,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nyc.schools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "schools/views/schools-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -57,7 +57,7 @@ struct ContentView: View {
             List{
                 ForEach(viewModel.schools.filter({ searchTerm.isEmpty ? true : $0.school_name.contains(searchTerm)})) { school in
                     NavigationLink(
-                        destination: SchoolSatScoreView(satData: viewModel.satLookUp[school.dbn], schoolName: school.school_name),
+                        destination: SatView(satData: viewModel.satLookUp[school.dbn], schoolName: school.school_name),
                         label: {
                             Text(school.school_name)
                             //since the full school name is available on the next page, may be ok to
@@ -88,6 +88,20 @@ struct ActivityIndicator: UIViewRepresentable {
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<Self>) {
         isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
         configuration(uiView)
+    }
+}
+
+struct SatView: UIViewControllerRepresentable {
+    var satData: SatData?
+    var schoolName: String
+    
+    func makeUIViewController(context: Context) -> SchoolsSatDetailsViewController {
+        let viewController = SchoolsSatDetailsViewController.init(params: satData, schoolName)!
+        return viewController
+    }
+    
+    func updateUIViewController(_ uiViewController: SchoolsSatDetailsViewController, context: Context) {
+        
     }
 }
 

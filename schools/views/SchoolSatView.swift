@@ -23,7 +23,7 @@ struct SchoolSatScoreView : View {
                     HStack{
                         Spacer()
                         VStack {
-                            Text(data.num_of_sat_test_takers).font(.system(size: 70))
+                            Text(data.num_of_sat_test_takers ?? "").font(.system(size: 70))
                                 .multilineTextAlignment(.center)
                             Text("Number of Test Takers")
                                 .padding(.bottom)
@@ -34,17 +34,17 @@ struct SchoolSatScoreView : View {
                     HStack{
                         Text("SAT Critical Reading Avg. Score")
                         Spacer()
-                        Text(data.sat_critical_reading_avg_score)
+                        Text(data.sat_critical_reading_avg_score ?? "")
                     }
                     HStack{
                         Text("SAT Math Avg. Score")
                         Spacer()
-                        Text(data.sat_math_avg_score)
+                        Text(data.sat_math_avg_score ?? "")
                     }
                     HStack{
                         Text("SAT Writing Avg. Score")
                         Spacer()
-                        Text(data.sat_writing_avg_score)
+                        Text(data.sat_writing_avg_score ?? "")
                     }
                     VStack{
                         //using a static chart. if data is available, will be nice to show the score distribution
